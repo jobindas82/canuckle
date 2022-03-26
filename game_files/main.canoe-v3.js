@@ -14520,9 +14520,7 @@
       return Math.round(t / 864e5);
     }
     function Da(e) {
-      var a,
-        s = Ga(e);
-      return (a = s % La.length), La[a];
+      return La[Math.floor(Math.random()*La.length)];
     }
     function Ga(e) {
       return Na(Ha, e);
@@ -14621,7 +14619,7 @@
             n(p(e), "hardMode", void 0),
             n(p(e), "dayOffset", void 0),
             e.attachShadow({ mode: "open" }),
-            (e.today = randomDate(new Date(2012, 0, 1), new Date()));
+            (e.today = new Date());
           var o = za();
 
           var currentGame = Ga(e.today) - 235;
@@ -16076,8 +16074,3 @@
       e
     );
   })({}));
-
-  function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-  }
-  
