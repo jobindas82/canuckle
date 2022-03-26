@@ -14621,7 +14621,7 @@
             n(p(e), "hardMode", void 0),
             n(p(e), "dayOffset", void 0),
             e.attachShadow({ mode: "open" }),
-            (e.today = new Date());
+            (e.today = randomDate(new Date(2012, 0, 1), new Date()));
           var o = za();
 
           var currentGame = Ga(e.today) - 235;
@@ -16076,3 +16076,8 @@
       e
     );
   })({}));
+
+  function randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+  
