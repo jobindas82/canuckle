@@ -14631,13 +14631,13 @@
           }
 
           return (
-            (e.lastPlayedTs = o.lastPlayedTs),
+            (e.lastPlayedTs = null),
             !e.lastPlayedTs || Na(new Date(e.lastPlayedTs), e.today) >= 1
               ? ((e.boardState = new Array(6).fill("")),
                 (e.evaluations = new Array(6).fill(null)),
                 (e.solution = Da(e.today)),
                 (e.dayOffset = Ga(e.today)),
-                (e.lastCompletedTs = o.lastCompletedTs),
+                (e.lastCompletedTs = null),
                 (e.hardMode = o.hardMode),
                 (e.restoringFromLocalStorage = !1),
                 ja({
@@ -14655,7 +14655,7 @@
                 (e.dayOffset = Ga(e.today)),
                 (e.letterEvaluations = Pa(e.boardState, e.evaluations)),
                 (e.gameStatus = o.gameStatus),
-                (e.lastCompletedTs = o.lastCompletedTs),
+                (e.lastCompletedTs = null),
                 (e.hardMode = o.hardMode),
                 e.gameStatus !== Za && (e.canInput = !1),
                 (e.restoringFromLocalStorage = !0)),
@@ -14759,7 +14759,7 @@
                         1 === Na(new Date(this.lastCompletedTs), new Date()),
                       numGuesses: this.rowIndex,
                     }),
-                      ja({ lastCompletedTs: Date.now() }),
+                      ja({ lastCompletedTs: null }),
                       (this.gameStatus = l ? es : as),
                       Ca("event", "level_end", {
                         level_name: Wa(this.solution),
@@ -14774,7 +14774,7 @@
                       evaluations: this.evaluations,
                       solution: this.solution,
                       gameStatus: this.gameStatus,
-                      lastPlayedTs: Date.now(),
+                      lastPlayedTs: null,
                     });
                 }
               },
